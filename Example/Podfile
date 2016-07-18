@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FOPopup_Example' do
+  pod 'FOPopup', :path => '../'
+
+  target 'FOPopup_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
