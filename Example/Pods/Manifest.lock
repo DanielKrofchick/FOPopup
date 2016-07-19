@@ -1,0 +1,16 @@
+PODS:
+  - FOPopup (0.1.0)
+
+DEPENDENCIES:
+  - FOPopup (from `../`)
+
+EXTERNAL SOURCES:
+  FOPopup:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FOPopup: 6200ed67a2f85186e2162ff05acf3a44e1c6a697
+
+PODFILE CHECKSUM: 636d20bb302e1dfc80e748110a8df8f294a7cb92
+
+COCOAPODS: 1.0.1

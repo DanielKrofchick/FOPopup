@@ -1,0 +1,6 @@
+framework module FOPopup {
+  umbrella header "FOPopup-umbrella.h"
+
+  export *
+  module * { export * }
+}
