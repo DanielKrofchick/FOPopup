@@ -30,12 +30,7 @@ class ViewController: UIViewController {
     }
     
     func buttonTap() {
-        let content = UIViewController()
-        content.view.backgroundColor = UIColor.orangeColor()
-        content.preferredContentSize = CGSize(width: 200, height: 100)
-        
-        let popup = FOPopupController(content: content)
-        presentViewController(popup, animated: false, completion: nil)
+        presentViewController(FOPopupController(content: FOContent()), animated: false, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -44,7 +39,47 @@ class ViewController: UIViewController {
         button.sizeToFit()
         button.center = view.center
     }
-
-
+    
 }
 
+class FOContent: UIViewController, FOPopupProtocol {
+    
+    var anchorPoints: [CGPoint]?
+    var showAnchorPoint: CGPoint?
+    
+    var top = UIView()
+    var bottom = UIView()
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        top.backgroundColor = UIColor.blueColor()
+        view.addSubview(top)
+        
+        bottom.backgroundColor = UIColor.greenColor()
+        view.addSubview(bottom)
+        
+        view.backgroundColor = UIColor.orangeColor()
+        preferredContentSize = CGSize(width: 200, height: 300)
+        
+        anchorPoints = [
+            CGPoint(x: 0, y: 0),
+            CGPoint(x: 0, y: 200),
+            CGPoint(x: 0, y: 300),
+        ]
+        
+        showAnchorPoint = CGPoint(x: 0, y: 200)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        top.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        bottom.frame = CGRect(x: 0, y: 200, width: 200, height: 100)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
