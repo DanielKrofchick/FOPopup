@@ -9,6 +9,6 @@
 public protocol FOPopupProtocol {
     
     var anchorPoints: [CGPoint]? {get set}
-    var showAnchorPoint: CGPoint? {get set}
+    var startAnchorPoint: CGPoint? {get set}
     
 }

@@ -45,41 +45,70 @@ class ViewController: UIViewController {
 class FOContent: UIViewController, FOPopupProtocol {
     
     var anchorPoints: [CGPoint]?
-    var showAnchorPoint: CGPoint?
+    var startAnchorPoint: CGPoint?
     
-    var top = UIView()
-    var bottom = UIView()
+    var views = [UIView]()
+    var preferredWidth = CGFloat(200)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        top.backgroundColor = UIColor.blueColor()
-        view.addSubview(top)
+        let heights: [CGFloat] = [200, 100]
         
-        bottom.backgroundColor = UIColor.greenColor()
-        view.addSubview(bottom)
+        for h in heights {
+            v(h)
+        }
         
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
         view.backgroundColor = UIColor.orangeColor()
-        preferredContentSize = CGSize(width: 200, height: 300)
+    }
+    
+    func v(height: CGFloat, color: UIColor = UIColor.random()) -> UIView {
+        let v = UIView()
+        v.backgroundColor = color
+        v.frame = CGRect(x: 0, y: 0, width: preferredWidth, height: height)
+        view.addSubview(v)
+        views.append(v)
         
-        anchorPoints = [
-            CGPoint(x: 0, y: 0),
-            CGPoint(x: 0, y: 200),
-            CGPoint(x: 0, y: 300),
-        ]
-        
-        showAnchorPoint = CGPoint(x: 0, y: 200)
+        return v
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        top.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        bottom.frame = CGRect(x: 0, y: 200, width: 200, height: 100)
+        var y = CGFloat(0)
+        
+        anchorPoints = [CGPoint]()
+        anchorPoints?.append(CGPoint(x: 0, y: 0))
+        
+        for (index, v) in views.enumerate() {
+            v.frame = CGRect(x: (view.frame.width - preferredWidth) / 2, y: y, width: preferredWidth, height: v.frame.height)
+            y += v.frame.height
+            anchorPoints?.append(CGPoint(x: 0, y: y))
+            
+            if index == 0 {
+                startAnchorPoint = CGPoint(x: 0, y: y)
+            }
+        }
+        
+        preferredContentSize = CGSize(width: preferredWidth, height: y)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension UIColor {
+    
+    class func random(red: CGFloat = randomF(), green: CGFloat = randomF(), blue: CGFloat = randomF(), alpha: CGFloat = randomF()) -> UIColor {
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+}
+
+private func randomF() -> CGFloat {
+    return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
 }

@@ -47,7 +47,7 @@ class FOPopoverAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
                 from.view.backgroundColor = UIColor(white: 0, alpha: 0.5)
                 
-                if let anchor = (to as? FOPopupProtocol)?.showAnchorPoint {
+                if let anchor = (to as? FOPopupProtocol)?.startAnchorPoint {
                     to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height - anchor.y, width: toS.width, height: toS.height)
                 } else {
                     to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height - toS.height, width: toS.width, height: toS.height)
