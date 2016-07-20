@@ -10,6 +10,7 @@ public class FOPopupController: UIViewController {
     
     var content: UIViewController!
     var snapThreshold = CGFloat(40)
+    private var rotatingContentH = CGFloat(0)
     
     public convenience init(content: UIViewController) {
         self.init(nibName: nil, bundle: nil)
@@ -36,6 +37,28 @@ public class FOPopupController: UIViewController {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
+    
+    public override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        rotatingContentH = view.frame.height - content.view.frame.origin.y
+    }
+    
+    public override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        let contentS = content.preferredContentSize
+        let viewS = view.frame.size
+    
+        UIView.animateWithDuration(duration) { 
+            self.content.view.frame = CGRect(x: (viewS.width - contentS.width) / 2, y: viewS.height - self.rotatingContentH, width: contentS.width, height: contentS.height)
+        }
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// Gesture
+extension FOPopupController {
     
     func pan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(recognizer.view)
@@ -80,7 +103,7 @@ public class FOPopupController: UIViewController {
         } else {
             UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
                 self.content.view.frame = CGRect(x: self.content.view.frame.origin.x, y: point.y, width: self.content.view.frame.width, height: self.content.view.frame.height)
-            }, completion: nil)
+                }, completion: nil)
         }
     }
     
@@ -106,11 +129,7 @@ public class FOPopupController: UIViewController {
         
         return (up == max ? nil : up, down == max ? nil : down)
     }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
 }
 
 extension FOPopupController: UIViewControllerTransitioningDelegate {
