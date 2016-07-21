@@ -36,8 +36,8 @@ class FOPopoverAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             from.view.userInteractionEnabled = false
             transitionContext.containerView()?.addSubview(from.view)
             transitionContext.containerView()?.addSubview(to.view)
-            transitionContext.containerView()?.addGestureRecognizer(UITapGestureRecognizer(target: from, action: #selector(FOPopupController.dismiss)))
-            transitionContext.containerView()?.addGestureRecognizer(UIPanGestureRecognizer(target: from, action: #selector(FOPopupController.pan)))
+            transitionContext.containerView()?.addGestureRecognizer(dismisRecognizer(from))
+            transitionContext.containerView()?.addGestureRecognizer(panRecognizer(from))
             
             let toS = to.preferredContentSize
             
@@ -77,6 +77,26 @@ class FOPopoverAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 UIApplication.sharedApplication().keyWindow?.addSubview(to.view)
             })
         }
+    }
+    
+    func dismisRecognizer(target: AnyObject?) -> UIGestureRecognizer {
+        let recognizer = UITapGestureRecognizer(target: target, action: #selector(FOPopupController.dismiss))
+        
+        if let target = target as? UIGestureRecognizerDelegate {
+            recognizer.delegate = target
+        }
+        
+        return recognizer
+    }
+    
+    func panRecognizer(target: AnyObject?) -> UIGestureRecognizer {
+        let recognizer = UIPanGestureRecognizer(target: target, action: #selector(FOPopupController.pan))
+        
+        if let target = target as? UIGestureRecognizerDelegate {
+            recognizer.delegate = target
+        }
+        
+        return recognizer
     }
     
 }

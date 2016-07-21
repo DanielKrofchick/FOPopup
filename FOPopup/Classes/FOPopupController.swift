@@ -132,6 +132,22 @@ extension FOPopupController {
 
 }
 
+extension FOPopupController: UIGestureRecognizerDelegate {
+    
+    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        var should = true
+        
+        if let gestureRecognizer = gestureRecognizer as? UITapGestureRecognizer {
+            if content.view.frame.contains(gestureRecognizer.locationInView(view)) {
+                should = false
+            }
+        }
+        
+        return should
+    }
+    
+}
+
 extension FOPopupController: UIViewControllerTransitioningDelegate {
 
     public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
