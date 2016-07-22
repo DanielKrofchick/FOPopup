@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     func buttonTap() {
-        presentViewController(FOPopupController(content: FOContent()), animated: false, completion: nil)
+        presentViewController(FOPopup(content: FOContent()).content, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {

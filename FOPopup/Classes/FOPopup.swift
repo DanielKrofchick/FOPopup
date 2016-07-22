@@ -1,70 +1,66 @@
 //
-//  FOPopupController.swift
+//  FOPopup.swift
 //  Pods
 //
 //  Created by Daniel Krofchick on 2016-07-18.
 //
 //
 
-public class FOPopupController: UIViewController {
+public class FOPopup: NSObject {
     
-    var content: UIViewController!
+    public var content: UIViewController!
     var snapThreshold = CGFloat(40)
-    private var rotatingContentH = CGFloat(0)
+    let background = UIView()
+    var retainer: AnyObject? = nil // Retians this object until the content is dismissed.
     
-    public convenience init(content: UIViewController) {
-        self.init(nibName: nil, bundle: nil)
-        
+    public required init(content: UIViewController) {
+        super.init()
+
+        retainer = self
+
+        background.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        background.backgroundColor = UIColor.blackColor()
+
         content.transitioningDelegate = self
         content.modalPresentationStyle = .Custom
         self.content = content
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIDeviceOrientationDidChangeNotification, object: nil, queue: .mainQueue()) {
+            [weak self] _ in
+            if let this = self {
+                let contentS = content.preferredContentSize
+                let viewS = this.presenting().view.frame.size
+                let y = viewS.height - (viewS.width - content.view.frame.origin.y)
+                
+                UIView.animateWithDuration(0.3) {
+                    this.content.view.frame = CGRect(x: (viewS.width - contentS.width) / 2, y: y, width: contentS.width, height: contentS.height)
+                }
+            }
+        }
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        modalPresentationStyle = .Custom
-    }
-    
-    public override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        presentViewController(content, animated: true, completion: nil)
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func dismiss() {
-        dismissViewControllerAnimated(true) { 
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        content.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    public override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        rotatingContentH = view.frame.height - content.view.frame.origin.y
-    }
-    
-    public override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        let contentS = content.preferredContentSize
-        let viewS = view.frame.size
-    
-        UIView.animateWithDuration(duration) { 
-            self.content.view.frame = CGRect(x: (viewS.width - contentS.width) / 2, y: viewS.height - self.rotatingContentH, width: contentS.width, height: contentS.height)
-        }
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func presenting() -> UIViewController {
+        return content.presentingViewController!
     }
     
 }
 
 // Gesture
-extension FOPopupController {
+extension FOPopup {
     
     func pan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(recognizer.view)
         let velocity = recognizer.velocityInView(recognizer.view)
-        let maxY = view.frame.height + content.view.frame.height / 2
-        let minY = view.frame.height - content.view.frame.height / 2
+        let maxY = presenting().view.frame.height + content.view.frame.height / 2
+        let minY = presenting().view.frame.height - content.view.frame.height / 2
         
         content.view.center = CGPoint(x: content.view.center.x, y: max(minY, min(content.view.center.y + translation.y, maxY)))
         
@@ -76,11 +72,11 @@ extension FOPopupController {
             var downY: CGFloat? = nil
             
             if let up = anchors.up {
-                upY = view.frame.height - up.y
+                upY = presenting().view.frame.height - up.y
             }
             
             if let down = anchors.down {
-                downY = view.frame.height - down.y
+                downY = presenting().view.frame.height - down.y
             }
             
             if let upY = upY where abs(upY - content.view.frame.origin.y) <= snapThreshold {
@@ -98,7 +94,7 @@ extension FOPopupController {
     }
     
     func snapToPoint(point: CGPoint) {
-        if abs(view.frame.height - point.y) < snapThreshold {
+        if abs(presenting().view.frame.height - point.y) < snapThreshold {
             dismiss()
         } else {
             UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
@@ -113,7 +109,7 @@ extension FOPopupController {
         var up = max
         var down = max
         
-        let currentY = view.frame.height - content.view.frame.origin.y
+        let currentY = presenting().view.frame.height - content.view.frame.origin.y
         
         if let anchors = (content as? FOPopupProtocol)?.anchorPoints {
             anchors.forEach { anchor in
@@ -132,13 +128,13 @@ extension FOPopupController {
 
 }
 
-extension FOPopupController: UIGestureRecognizerDelegate {
+extension FOPopup: UIGestureRecognizerDelegate {
     
     public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         var should = true
         
         if let gestureRecognizer = gestureRecognizer as? UITapGestureRecognizer {
-            if content.view.frame.contains(gestureRecognizer.locationInView(view)) {
+            if content.view.frame.contains(gestureRecognizer.locationInView(presenting().view)) {
                 should = false
             }
         }
@@ -148,16 +144,16 @@ extension FOPopupController: UIGestureRecognizerDelegate {
     
 }
 
-extension FOPopupController: UIViewControllerTransitioningDelegate {
+extension FOPopup: UIViewControllerTransitioningDelegate {
 
     public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return FOPopoverAnimator(presenting: true)
+        return FOPopoverAnimator(presenting: true, popup: self)
     }
     
     public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return FOPopoverAnimator(presenting: false)
+        return FOPopoverAnimator(presenting: false, popup: self)
     }
 
 }
