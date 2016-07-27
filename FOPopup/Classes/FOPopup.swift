@@ -12,6 +12,7 @@ public protocol FOPopupProtocol {
     var startAnchorPoint: CGPoint? {get set}
     weak var popup: FOPopup? {get set}
     func willSnapToPoint(point: CGPoint) -> CGPoint?
+    func didPan(recognizer: UIPanGestureRecognizer)
     
 }
 
@@ -19,6 +20,9 @@ extension FOPopupProtocol {
     
     func willSnapToPoint(point: CGPoint) -> CGPoint? {
         return point
+    }
+    
+    func didPan(recognizer: UIPanGestureRecognizer) {
     }
 
 }
