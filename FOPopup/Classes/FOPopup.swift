@@ -118,6 +118,10 @@ extension FOPopup {
         }
         
         recognizer.setTranslation(CGPointZero, inView: recognizer.view)
+        
+        if let content = content as? FOPopupProtocol {
+            content.didPan(recognizer)
+        }
     }
     
     func snapToPoint(point: CGPoint) {
