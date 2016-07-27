@@ -11,6 +11,7 @@ public protocol FOPopupProtocol {
     var anchorPoints: [CGPoint]? {get set}
     var startAnchorPoint: CGPoint? {get set}
     weak var popup: FOPopup? {get set}
+    func willSnapToPoint(point: CGPoint) -> CGPoint?
     
 }
 
