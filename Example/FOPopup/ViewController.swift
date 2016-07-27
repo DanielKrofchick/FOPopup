@@ -46,6 +46,7 @@ class FOContent: UIViewController, FOPopupProtocol {
     
     var anchorPoints: [CGPoint]?
     var startAnchorPoint: CGPoint?
+    weak var popup: FOPopup?
     
     var views = [UIView]()
     var preferredWidth = CGFloat(200)
@@ -94,7 +95,7 @@ class FOContent: UIViewController, FOPopupProtocol {
         
         preferredContentSize = CGSize(width: preferredWidth, height: y)
     }
-    
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

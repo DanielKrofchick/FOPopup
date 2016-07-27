@@ -1,12 +1,12 @@
 //
-//  FOPopoverAnimator.swift
+//  FOPopupAnimator.swift
 //  Pods
 //
 //  Created by Daniel Krofchick on 2016-07-19.
 //
 //
 
-class FOPopoverAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     var presenting = false
     var popup: FOPopup!

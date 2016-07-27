@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A69002D08DC9FB759D20A23150FDABA /* Pods-FOPopup_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A31406EFD92B415B3826B9451645073 /* Pods-FOPopup_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31A279950FDE59BD28A2402F0308A508 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		4C580F671D3E7C8000C04CA8 /* FOPopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C580F661D3E7C8000C04CA8 /* FOPopoverAnimator.swift */; };
-		4C580F6D1D3EB24A00C04CA8 /* FOPopupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C580F6C1D3EB24A00C04CA8 /* FOPopupProtocol.swift */; };
+		4C580F671D3E7C8000C04CA8 /* FOPopupAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C580F661D3E7C8000C04CA8 /* FOPopupAnimator.swift */; };
 		4CFE2ADE1D3D712A009BBF37 /* FOPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE2ADD1D3D712A009BBF37 /* FOPopup.swift */; };
 		4FAFCF48EFFD74AA735A277EDAC2E0F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		73BCCA09FE16BEB73966FE12C663D7AF /* FOPopup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC31C3D959F1B008ABD01FA62ACC44 /* FOPopup-dummy.m */; };
@@ -43,8 +42,7 @@
 		334023CB605B748BF37E81D419166457 /* Pods-FOPopup_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FOPopup_Example.modulemap"; sourceTree = "<group>"; };
 		3A31406EFD92B415B3826B9451645073 /* Pods-FOPopup_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FOPopup_Tests-umbrella.h"; sourceTree = "<group>"; };
 		46F2D16FDC1D96EE4429454039BAE886 /* Pods-FOPopup_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FOPopup_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4C580F661D3E7C8000C04CA8 /* FOPopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOPopoverAnimator.swift; sourceTree = "<group>"; };
-		4C580F6C1D3EB24A00C04CA8 /* FOPopupProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOPopupProtocol.swift; sourceTree = "<group>"; };
+		4C580F661D3E7C8000C04CA8 /* FOPopupAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOPopupAnimator.swift; sourceTree = "<group>"; };
 		4CFE2ADD1D3D712A009BBF37 /* FOPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOPopup.swift; sourceTree = "<group>"; };
 		5D6DF8C58CAA000BD0B627E1BDB9510F /* Pods-FOPopup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FOPopup_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5E67D50046740C8802CFBDE3DC60316B /* FOPopup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOPopup.xcconfig; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				090894312B69EF1D68DD6676A61935CB /* FOPopup */,
-				D02588D1EA2FE9F12C3B5CDD0EA6CD98 /* Support Files */,
 			);
 			name = FOPopup;
 			path = ../..;
@@ -136,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				4CFE2ADD1D3D712A009BBF37 /* FOPopup.swift */,
-				4C580F661D3E7C8000C04CA8 /* FOPopoverAnimator.swift */,
-				4C580F6C1D3EB24A00C04CA8 /* FOPopupProtocol.swift */,
+				4C580F661D3E7C8000C04CA8 /* FOPopupAnimator.swift */,
+				D02588D1EA2FE9F12C3B5CDD0EA6CD98 /* Support Files */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -207,7 +204,7 @@
 				F5CCF3FB0C697FA3CAC4A5FB899083A4 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/FOPopup";
+			path = "../../Example/Pods/Target Support Files/FOPopup";
 			sourceTree = "<group>";
 		};
 		F0376B0234B66F0B9A02B2320D136FFB /* Pods-FOPopup_Example */ = {
@@ -353,8 +350,7 @@
 			files = (
 				73BCCA09FE16BEB73966FE12C663D7AF /* FOPopup-dummy.m in Sources */,
 				4CFE2ADE1D3D712A009BBF37 /* FOPopup.swift in Sources */,
-				4C580F671D3E7C8000C04CA8 /* FOPopoverAnimator.swift in Sources */,
-				4C580F6D1D3EB24A00C04CA8 /* FOPopupProtocol.swift in Sources */,
+				4C580F671D3E7C8000C04CA8 /* FOPopupAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

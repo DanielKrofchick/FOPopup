@@ -6,6 +6,22 @@
 //
 //
 
+public protocol FOPopupProtocol {
+    
+    var anchorPoints: [CGPoint]? {get set}
+    var startAnchorPoint: CGPoint? {get set}
+    weak var popup: FOPopup? {get set}
+    
+}
+
+extension FOPopupProtocol {
+    
+    func willSnapToPoint(point: CGPoint) -> CGPoint? {
+        return point
+    }
+
+}
+
 public class FOPopup: NSObject {
     
     public var content: UIViewController!
@@ -20,11 +36,17 @@ public class FOPopup: NSObject {
 
         background.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         background.backgroundColor = UIColor.blackColor()
-
-        content.transitioningDelegate = self
-        content.modalPresentationStyle = .Custom
-        self.content = content
         
+        if var content = content as? FOPopupProtocol {
+            content.popup = self
+            
+            if var content = content as? UIViewController {
+                content.transitioningDelegate = self
+                content.modalPresentationStyle = .Custom
+                self.content = content
+            }
+        }
+
         NSNotificationCenter.defaultCenter().addObserverForName(UIDeviceOrientationDidChangeNotification, object: nil, queue: .mainQueue()) {
             [weak self] _ in
             if let this = self {
@@ -94,12 +116,17 @@ extension FOPopup {
     }
     
     func snapToPoint(point: CGPoint) {
-        if abs(presenting().view.frame.height - point.y) < snapThreshold {
-            dismiss()
-        } else {
-            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
-                self.content.view.frame = CGRect(x: self.content.view.frame.origin.x, y: point.y, width: self.content.view.frame.width, height: self.content.view.frame.height)
-                }, completion: nil)
+        if let
+            content = content as? FOPopupProtocol,
+            p = content.willSnapToPoint(point)
+        {
+            if abs(presenting().view.frame.height - p.y) < snapThreshold {
+                dismiss()
+            } else {
+                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
+                    self.content.view.frame = CGRect(x: self.content.view.frame.origin.x, y: p.y, width: self.content.view.frame.width, height: self.content.view.frame.height)
+                    }, completion: nil)
+            }
         }
     }
     
@@ -148,12 +175,12 @@ extension FOPopup: UIViewControllerTransitioningDelegate {
 
     public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return FOPopoverAnimator(presenting: true, popup: self)
+        return FOPopupAnimator(presenting: true, popup: self)
     }
     
     public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return FOPopoverAnimator(presenting: false, popup: self)
+        return FOPopupAnimator(presenting: false, popup: self)
     }
 
 }
