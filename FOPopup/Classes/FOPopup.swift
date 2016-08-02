@@ -140,7 +140,7 @@ extension FOPopup {
     }
     
     // Returns closes anchors up and down. nil if there is no anchor in a particular direction.
-    func closestAnchors() -> (up: CGPoint?, down: CGPoint?) {
+    public func closestAnchors() -> (up: CGPoint?, down: CGPoint?) {
         let max = CGPoint(x: CGFloat.max, y: CGFloat.max)
         var up = max
         var down = max
