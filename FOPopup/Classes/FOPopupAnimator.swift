@@ -36,9 +36,8 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey),
             container = transitionContext.containerView()
         {
-            container.addSubview(from.view)
+            container.addSubview(popup.background)
             container.addSubview(to.view)
-            from.view.addSubview(popup.background)
             
             to.view.addGestureRecognizer(panRecognizer(popup))
             popup.background.addGestureRecognizer(dismisRecognizer(popup))
@@ -70,9 +69,6 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey),
             container = transitionContext.containerView()
         {
-            container.addSubview(to.view)
-            container.addSubview(from.view)
-            
             let fromS = from.preferredContentSize
             
             UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
@@ -84,7 +80,6 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 self?.popup.background.removeFromSuperview()
                 self?.popup.retainer = nil
                 transitionContext.completeTransition(true)
-                UIApplication.sharedApplication().keyWindow?.addSubview(to.view)
             })
         }
     }
