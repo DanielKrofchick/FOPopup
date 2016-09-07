@@ -57,10 +57,9 @@ public class FOPopup: NSObject {
             if let this = self {
                 let contentS = content.preferredContentSize
                 let viewS = this.presenting().view.frame.size
-                let y = viewS.height - (viewS.width - content.view.frame.origin.y)
                 
                 UIView.animateWithDuration(0.3) {
-                    this.content.view.frame = CGRect(x: (viewS.width - contentS.width) / 2, y: y, width: contentS.width, height: contentS.height)
+                    this.content.view.frame = CGRect(x: (viewS.width - contentS.width) / 2, y: this.content.view.frame.origin.y, width: contentS.width, height: contentS.height)
                 }
             }
         }
