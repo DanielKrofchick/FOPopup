@@ -95,7 +95,14 @@ class FOContent: UIViewController, FOPopupProtocol {
         
         preferredContentSize = CGSize(width: preferredWidth, height: y)
     }
-        
+    
+    func willSnapToPoint(point: CGPoint) -> CGPoint? {
+        return point
+    }
+    
+    func didPan(recognizer: UIPanGestureRecognizer) {
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		2A69002D08DC9FB759D20A23150FDABA /* Pods-FOPopup_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A31406EFD92B415B3826B9451645073 /* Pods-FOPopup_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31A279950FDE59BD28A2402F0308A508 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		4C580F671D3E7C8000C04CA8 /* FOPopupAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C580F661D3E7C8000C04CA8 /* FOPopupAnimator.swift */; };
-		4CFE2ADE1D3D712A009BBF37 /* FOPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE2ADD1D3D712A009BBF37 /* FOPopup.swift */; };
-		4FAFCF48EFFD74AA735A277EDAC2E0F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		73BCCA09FE16BEB73966FE12C663D7AF /* FOPopup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC31C3D959F1B008ABD01FA62ACC44 /* FOPopup-dummy.m */; };
+		6F7EC0AF7FEB8329A17E2A6F5D3A8336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		93DFA0C92C051CEAFAC21BD558D59E91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		9593DA0CFD9702C259C1AF51D71CF600 /* FOPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C37451CDA60F4DF143730A9053F9072 /* FOPopup.swift */; };
 		ABFE58300B212E5724CE0FA737E047AD /* Pods-FOPopup_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5CF8A7E06D5F7BB5DA57F9A2F44274 /* Pods-FOPopup_Tests-dummy.m */; };
-		B87D56CBF46883CACFA61E2DCC9A965D /* FOPopup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBB214DF0D486DAAE1516E27EA88526 /* FOPopup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C07CBA075ABD4DF0CF25774586B2ACFE /* Pods-FOPopup_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E75701F9105F24790113143B9B64D /* Pods-FOPopup_Example-dummy.m */; };
+		C573C0AD09D2A9F4276B51B441542C24 /* FOPopupAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366E15CE2EE6498B1BA67CD8573E2B4 /* FOPopupAnimator.swift */; };
 		D6FBB4B5DF11ED71706FD290E8CD69F8 /* Pods-FOPopup_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CED980B0204F3038550855F677CBF863 /* Pods-FOPopup_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0EF777DFE83FAD637C65BBB7DFD09EE /* FOPopup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DC31C3D959F1B008ABD01FA62ACC44 /* FOPopup-dummy.m */; };
+		F4CE92DFAB311EA82D5C512AAD75D5AD /* FOPopup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBB214DF0D486DAAE1516E27EA88526 /* FOPopup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +25,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = ADA3EC9FD65C840A7B66AED5CEC8E072;
+			remoteGlobalIDString = 9194937818B67F8F21CD803AE0E2494B;
 			remoteInfo = FOPopup;
 		};
 /* End PBXContainerItemProxy section */
@@ -34,6 +34,7 @@
 		0A6EDBD9BCCEE536BADFDF2934255F17 /* Pods-FOPopup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FOPopup_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDA3B5DA1186C299C25E3D3B85F856A /* Pods-FOPopup_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FOPopup_Tests-resources.sh"; sourceTree = "<group>"; };
 		0F1E75701F9105F24790113143B9B64D /* Pods-FOPopup_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FOPopup_Example-dummy.m"; sourceTree = "<group>"; };
+		1366E15CE2EE6498B1BA67CD8573E2B4 /* FOPopupAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FOPopupAnimator.swift; sourceTree = "<group>"; };
 		1909B097A1B90E844BFAAB2D356CABAB /* FOPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FOPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB4E3AED9F2DD9C7927CEAE554C71B1 /* Pods-FOPopup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FOPopup_Example.release.xcconfig"; sourceTree = "<group>"; };
 		21D3E933EA5264EA885199F441F962A6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,11 +43,10 @@
 		334023CB605B748BF37E81D419166457 /* Pods-FOPopup_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FOPopup_Example.modulemap"; sourceTree = "<group>"; };
 		3A31406EFD92B415B3826B9451645073 /* Pods-FOPopup_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FOPopup_Tests-umbrella.h"; sourceTree = "<group>"; };
 		46F2D16FDC1D96EE4429454039BAE886 /* Pods-FOPopup_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FOPopup_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4C580F661D3E7C8000C04CA8 /* FOPopupAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOPopupAnimator.swift; sourceTree = "<group>"; };
-		4CFE2ADD1D3D712A009BBF37 /* FOPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FOPopup.swift; sourceTree = "<group>"; };
 		5D6DF8C58CAA000BD0B627E1BDB9510F /* Pods-FOPopup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FOPopup_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5E67D50046740C8802CFBDE3DC60316B /* FOPopup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOPopup.xcconfig; sourceTree = "<group>"; };
 		5E7C29A8F41E0EFE7A548B649D4F82E0 /* FOPopup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FOPopup-prefix.pch"; sourceTree = "<group>"; };
+		6C37451CDA60F4DF143730A9053F9072 /* FOPopup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FOPopup.swift; sourceTree = "<group>"; };
 		7A46EBBB59BA18E9969C8465A455644A /* Pods-FOPopup_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FOPopup_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		89798F86D5A5388D1ABD8780945A09A5 /* Pods_FOPopup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FOPopup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -67,19 +67,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A28AB696174B0641366D2EF0F6A4387 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FAFCF48EFFD74AA735A277EDAC2E0F2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		63E5686103F99223D702CC2DB047A31F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				93DFA0C92C051CEAFAC21BD558D59E91 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67114D667FF0C39D07F8217D0B0150EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7EC0AF7FEB8329A17E2A6F5D3A8336 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,14 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		090894312B69EF1D68DD6676A61935CB /* FOPopup */ = {
-			isa = PBXGroup;
-			children = (
-				5C983BA924C748E8214427A23DE7B81C /* Classes */,
-			);
-			path = FOPopup;
-			sourceTree = "<group>";
-		};
 		2DE7F35FFB6E9C5498E03B80EBD71086 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,18 +115,18 @@
 		4258BC440908E2F907B0B0D60B167040 /* FOPopup */ = {
 			isa = PBXGroup;
 			children = (
-				090894312B69EF1D68DD6676A61935CB /* FOPopup */,
+				930772F0E5A81A5B2B8D2AE7BF7B38B2 /* FOPopup */,
+				D02588D1EA2FE9F12C3B5CDD0EA6CD98 /* Support Files */,
 			);
 			name = FOPopup;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		5C983BA924C748E8214427A23DE7B81C /* Classes */ = {
+		4A9B7AEF513A237DEF63C44603F527A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4CFE2ADD1D3D712A009BBF37 /* FOPopup.swift */,
-				4C580F661D3E7C8000C04CA8 /* FOPopupAnimator.swift */,
-				D02588D1EA2FE9F12C3B5CDD0EA6CD98 /* Support Files */,
+				6C37451CDA60F4DF143730A9053F9072 /* FOPopup.swift */,
+				1366E15CE2EE6498B1BA67CD8573E2B4 /* FOPopupAnimator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -156,6 +148,14 @@
 				2DE7F35FFB6E9C5498E03B80EBD71086 /* Products */,
 				A8AB91EC4F90C0C3D5E400BCA4D241E5 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		930772F0E5A81A5B2B8D2AE7BF7B38B2 /* FOPopup */ = {
+			isa = PBXGroup;
+			children = (
+				4A9B7AEF513A237DEF63C44603F527A0 /* Classes */,
+			);
+			path = FOPopup;
 			sourceTree = "<group>";
 		};
 		986A022C1687F4351A5F1547AAA50537 /* Pods-FOPopup_Tests */ = {
@@ -204,7 +204,7 @@
 				F5CCF3FB0C697FA3CAC4A5FB899083A4 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../Example/Pods/Target Support Files/FOPopup";
+			path = "Example/Pods/Target Support Files/FOPopup";
 			sourceTree = "<group>";
 		};
 		F0376B0234B66F0B9A02B2320D136FFB /* Pods-FOPopup_Example */ = {
@@ -228,6 +228,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		461D58CFF62B6DBA8C14F7C10A301D42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CE92DFAB311EA82D5C512AAD75D5AD /* FOPopup-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77EAC9C6EA1D2ED0484D96953E69DCCD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,14 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6FBB4B5DF11ED71706FD290E8CD69F8 /* Pods-FOPopup_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF7658FBB8C2259AA50EA1822401E4ED /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B87D56CBF46883CACFA61E2DCC9A965D /* FOPopup-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,13 +273,13 @@
 			productReference = F7557074F009268985FACA865DCF898D /* Pods_FOPopup_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ADA3EC9FD65C840A7B66AED5CEC8E072 /* FOPopup */ = {
+		9194937818B67F8F21CD803AE0E2494B /* FOPopup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6055B504B72639B523583A9FE04F851A /* Build configuration list for PBXNativeTarget "FOPopup" */;
+			buildConfigurationList = 53D09AC5FD18CE05B872C1611E5C69FC /* Build configuration list for PBXNativeTarget "FOPopup" */;
 			buildPhases = (
-				DBA615694036D6CD27D56C2292F03C09 /* Sources */,
-				0A28AB696174B0641366D2EF0F6A4387 /* Frameworks */,
-				DF7658FBB8C2259AA50EA1822401E4ED /* Headers */,
+				190ECEA611742866EE98337952DDEEC2 /* Sources */,
+				67114D667FF0C39D07F8217D0B0150EF /* Frameworks */,
+				461D58CFF62B6DBA8C14F7C10A301D42 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -328,7 +328,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADA3EC9FD65C840A7B66AED5CEC8E072 /* FOPopup */,
+				9194937818B67F8F21CD803AE0E2494B /* FOPopup */,
 				18B31FD9BBAA4D2626EEEC2E9EB6209D /* Pods-FOPopup_Example */,
 				E16766D8B2247FDC852531A3CD0AD6E3 /* Pods-FOPopup_Tests */,
 			);
@@ -344,13 +344,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBA615694036D6CD27D56C2292F03C09 /* Sources */ = {
+		190ECEA611742866EE98337952DDEEC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BCCA09FE16BEB73966FE12C663D7AF /* FOPopup-dummy.m in Sources */,
-				4CFE2ADE1D3D712A009BBF37 /* FOPopup.swift in Sources */,
-				4C580F671D3E7C8000C04CA8 /* FOPopupAnimator.swift in Sources */,
+				E0EF777DFE83FAD637C65BBB7DFD09EE /* FOPopup-dummy.m in Sources */,
+				9593DA0CFD9702C259C1AF51D71CF600 /* FOPopup.swift in Sources */,
+				C573C0AD09D2A9F4276B51B441542C24 /* FOPopupAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,13 +368,149 @@
 		11ACF89AD8C4FD94281CCE8744795764 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FOPopup;
-			target = ADA3EC9FD65C840A7B66AED5CEC8E072 /* FOPopup */;
+			target = 9194937818B67F8F21CD803AE0E2494B /* FOPopup */;
 			targetProxy = C94B2D68F12E10C263A39EB54337D883 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+		28C3079B0BE5544F7FF78E28FB4C4E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E67D50046740C8802CFBDE3DC60316B /* FOPopup.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FOPopup/FOPopup-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FOPopup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FOPopup/FOPopup.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FOPopup;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		583C0AB66FCCC9580EE757A061732E67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D6DF8C58CAA000BD0B627E1BDB9510F /* Pods-FOPopup_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Tests/Pods-FOPopup_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FOPopup_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D1660E22A6647382BAA0D121D2EE657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E67D50046740C8802CFBDE3DC60316B /* FOPopup.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FOPopup/FOPopup-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FOPopup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FOPopup/FOPopup.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FOPopup;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8ABA9675D70D0FE99C8EFCCED18823F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A6EDBD9BCCEE536BADFDF2934255F17 /* Pods-FOPopup_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Example/Pods-FOPopup_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FOPopup_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -392,6 +528,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -406,205 +543,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		34139839BF3D21BC47F9F11295BDB02D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E67D50046740C8802CFBDE3DC60316B /* FOPopup.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FOPopup/FOPopup-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FOPopup/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FOPopup/FOPopup.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FOPopup;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		60B22AE5FA57820BB9BE56529846BA3E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E67D50046740C8802CFBDE3DC60316B /* FOPopup.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FOPopup/FOPopup-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FOPopup/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FOPopup/FOPopup.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FOPopup;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		72B3CDD992095328357608DDB24F5810 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A6EDBD9BCCEE536BADFDF2934255F17 /* Pods-FOPopup_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Example/Pods-FOPopup_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FOPopup_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9481F087993E13C42457DE37A12AB6DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF1377498582EB12B772DDD4B2F2354C /* Pods-FOPopup_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Tests/Pods-FOPopup_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FOPopup_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9BA537A8D48287CFC17BD21E37077BCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB4E3AED9F2DD9C7927CEAE554C71B1 /* Pods-FOPopup_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Example/Pods-FOPopup_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FOPopup_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AFEB25BA977833681F03185466C5563C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D6DF8C58CAA000BD0B627E1BDB9510F /* Pods-FOPopup_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Tests/Pods-FOPopup_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FOPopup_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -622,6 +568,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -641,8 +588,79 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9E70DB80B54A687B4BD078A3045C5607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB4E3AED9F2DD9C7927CEAE554C71B1 /* Pods-FOPopup_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Example/Pods-FOPopup_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FOPopup_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CFEAC9266AA3F035F2CEC1F174063912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF1377498582EB12B772DDD4B2F2354C /* Pods-FOPopup_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FOPopup_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FOPopup_Tests/Pods-FOPopup_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FOPopup_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -652,17 +670,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
-				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6055B504B72639B523583A9FE04F851A /* Build configuration list for PBXNativeTarget "FOPopup" */ = {
+		53D09AC5FD18CE05B872C1611E5C69FC /* Build configuration list for PBXNativeTarget "FOPopup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				60B22AE5FA57820BB9BE56529846BA3E /* Debug */,
-				34139839BF3D21BC47F9F11295BDB02D /* Release */,
+				7D1660E22A6647382BAA0D121D2EE657 /* Debug */,
+				28C3079B0BE5544F7FF78E28FB4C4E20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -670,8 +688,8 @@
 		67016FD7D2536A4AD2B9CD46D9B17AF6 /* Build configuration list for PBXNativeTarget "Pods-FOPopup_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72B3CDD992095328357608DDB24F5810 /* Debug */,
-				9BA537A8D48287CFC17BD21E37077BCB /* Release */,
+				8ABA9675D70D0FE99C8EFCCED18823F6 /* Debug */,
+				9E70DB80B54A687B4BD078A3045C5607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -679,8 +697,8 @@
 		DFFB1831139FBAB6102E71D39F3B8F31 /* Build configuration list for PBXNativeTarget "Pods-FOPopup_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9481F087993E13C42457DE37A12AB6DF /* Debug */,
-				AFEB25BA977833681F03185466C5563C /* Release */,
+				CFEAC9266AA3F035F2CEC1F174063912 /* Debug */,
+				583C0AB66FCCC9580EE757A061732E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

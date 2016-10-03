@@ -33,9 +33,10 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func present(transitionContext: UIViewControllerContextTransitioning) {
         if let
             from = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-            to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey),
-            container = transitionContext.containerView()
+            to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         {
+            let container = transitionContext.containerView()
+        
             container.addSubview(popup.background)
             container.addSubview(to.view)
             
@@ -43,14 +44,15 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             popup.background.addGestureRecognizer(dismisRecognizer(popup))
             popup.background.addGestureRecognizer(panRecognizer(popup))
             popup.background.frame = from.view.bounds
-            popup.background.backgroundColor = UIColor(white: 0, alpha: 0)
+            popup.background.backgroundColor = UIColor(white: 0, alpha: 1)
+            popup.background.alpha = 0
             
             let toS = to.preferredContentSize
             to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height, width: toS.width, height: toS.height)
             
             UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
                 [weak self] in
-                self?.popup.background.backgroundColor = UIColor(white: 0, alpha: 0.5)
+                self?.popup.background.alpha = 0.5
                 
                 if let anchor = (to as? FOPopupProtocol)?.startAnchorPoint {
                     to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height - anchor.y, width: toS.width, height: toS.height)
@@ -66,14 +68,14 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func dismiss(transitionContext: UIViewControllerContextTransitioning) {
         if let
             from = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-            to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey),
-            container = transitionContext.containerView()
+            to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         {
+            let container = transitionContext.containerView()
             let fromS = from.preferredContentSize
             
             UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
                 [weak self] in
-                self?.popup.background.backgroundColor = UIColor(white: 0, alpha: 0)
+                self?.popup.background.alpha = 0
                 from.view.frame = CGRect(x: (to.view.frame.width - fromS.width) / 2.0, y: to.view.frame.height, width: fromS.width, height: fromS.height)
             }, completion: {
                 [weak self] (finished) in

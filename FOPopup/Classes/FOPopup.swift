@@ -45,7 +45,7 @@ public class FOPopup: NSObject {
         if var content = content as? FOPopupProtocol {
             content.popup = self
             
-            if var content = content as? UIViewController {
+            if let content = content as? UIViewController {
                 content.transitioningDelegate = self
                 content.modalPresentationStyle = .Custom
                 self.content = content
