@@ -37,8 +37,8 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         {
             let container = transitionContext.containerView()
         
-            container.addSubview(popup.background)
-            container.addSubview(to.view)
+            container!.addSubview(popup.background)
+            container!.addSubview(to.view)
             
             to.view.addGestureRecognizer(panRecognizer(popup))
             popup.background.addGestureRecognizer(dismisRecognizer(popup))
