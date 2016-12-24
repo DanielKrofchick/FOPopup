@@ -18,11 +18,11 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         self.popup = popup
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.4
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if presenting {
             present(transitionContext)
         } else {
@@ -30,12 +30,12 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
     
-    func present(transitionContext: UIViewControllerContextTransitioning) {
+    func present(_ transitionContext: UIViewControllerContextTransitioning) {
         if let
-            from = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-            to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+            from = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let to = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
         {
-            let container = transitionContext.containerView()
+            let container = transitionContext.containerView
         
             container.addSubview(popup.background)
             container.addSubview(to.view)
@@ -50,7 +50,7 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             let toS = to.preferredContentSize
             to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height, width: toS.width, height: toS.height)
             
-            UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
                 [weak self] in
                 self?.popup.background.alpha = 0.5
                 
@@ -65,15 +65,14 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
     
-    func dismiss(transitionContext: UIViewControllerContextTransitioning) {
+    func dismiss(_ transitionContext: UIViewControllerContextTransitioning) {
         if let
-            from = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-            to = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+            from = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let to = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
         {
-            let container = transitionContext.containerView()
             let fromS = from.preferredContentSize
             
-            UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
                 [weak self] in
                 self?.popup.background.alpha = 0
                 from.view.frame = CGRect(x: (to.view.frame.width - fromS.width) / 2.0, y: to.view.frame.height, width: fromS.width, height: fromS.height)
@@ -86,7 +85,7 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
     
-    func dismisRecognizer(target: AnyObject?) -> UIGestureRecognizer {
+    func dismisRecognizer(_ target: AnyObject?) -> UIGestureRecognizer {
         let recognizer = UITapGestureRecognizer(target: target, action: #selector(FOPopup.dismiss))
         
         if let target = target as? UIGestureRecognizerDelegate {
@@ -96,7 +95,7 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         return recognizer
     }
     
-    func panRecognizer(target: AnyObject?) -> UIGestureRecognizer {
+    func panRecognizer(_ target: AnyObject?) -> UIGestureRecognizer {
         let recognizer = UIPanGestureRecognizer(target: target, action: #selector(FOPopup.pan))
         
         if let target = target as? UIGestureRecognizerDelegate {
