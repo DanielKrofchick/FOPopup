@@ -79,7 +79,7 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             }, completion: {
                 [weak self] (finished) in
                 self?.popup.background.removeFromSuperview()
-                self?.popup.retainer = nil
+                self?.popup.selfRef = nil
                 transitionContext.completeTransition(true)
             })
         }

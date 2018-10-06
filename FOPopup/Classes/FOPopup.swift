@@ -40,13 +40,13 @@ open class FOPopup: NSObject {
     var snapThreshold: CGFloat = 40
     let background = UIView()
 
-    // retians this object until the content is dismissed
-    var retainer: AnyObject?
+    // retains itself until the content is dismissed
+    var selfRef: AnyObject?
     
     public required init(content: UIViewController) {
         super.init()
 
-        retainer = self
+        selfRef = self
 
         background.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         background.backgroundColor = .black
