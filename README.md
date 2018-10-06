@@ -1,15 +1,25 @@
 # FOPopup
 
-[![CI Status](http://img.shields.io/travis/Daniel Krofchick/FOPopup.svg?style=flat)](https://travis-ci.org/Daniel Krofchick/FOPopup)
-[![Version](https://img.shields.io/cocoapods/v/FOPopup.svg?style=flat)](http://cocoapods.org/pods/FOPopup)
-[![License](https://img.shields.io/cocoapods/l/FOPopup.svg?style=flat)](http://cocoapods.org/pods/FOPopup)
-[![Platform](https://img.shields.io/cocoapods/p/FOPopup.svg?style=flat)](http://cocoapods.org/pods/FOPopup)
+FOPopup is a simple sliding panel control. It currently only works from the bottom.
+
+Initialize an `FOPopup` with a `UIViewController` that conforms to the  `FOPopupProtocol`.
+```
+let content = UIViewController() 
+let popup = FOPopup(content: content)
+```
+Then present the controller.
+```
+viewController.present(content, animated: true, completion: nil)
+```
+In the view controller, assign values for:
+```
+anchorPoints
+startAnchorPoint
+```
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+Try the example project in the `FOPopup_Example` target.
 
 ## Installation
 
@@ -17,7 +27,7 @@ FOPopup is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "FOPopup"
+pod 'FOPopup', :git => 'https://github.com/DanielKrofchick/FOPopup.git'
 ```
 
 ## Author

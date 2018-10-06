@@ -6,14 +6,18 @@
 //
 //
 
-public protocol FOPopupProtocol {
-    
+public protocol FOPopupProtocol: class {
+    // snap points
     var anchorPoints: [CGPoint]? {get set}
+    // snap point when controller is first revealed
     var startAnchorPoint: CGPoint? {get set}
-    weak var popup: FOPopup? {get set}
-    func willSnapToPoint(_ point: CGPoint) -> CGPoint?
-    func didPan(_ recognizer: UIPanGestureRecognizer)
     
+    // the controller will animate to the snap point
+    // return it or change the destination
+    func willSnapToPoint(_ point: CGPoint) -> CGPoint?
+    
+    // pan recognizer forwarding
+    func didPan(_ recognizer: UIPanGestureRecognizer)
 }
 
 extension FOPopupProtocol {
@@ -30,9 +34,14 @@ extension FOPopupProtocol {
 open class FOPopup: NSObject {
     
     open var content: UIViewController!
-    var snapThreshold = CGFloat(40)
+    var delegate: FOPopupProtocol? {
+        return content as? FOPopupProtocol
+    }
+    var snapThreshold: CGFloat = 40
     let background = UIView()
-    var retainer: AnyObject? = nil // Retians this object until the content is dismissed.
+
+    // retians this object until the content is dismissed
+    var retainer: AnyObject?
     
     public required init(content: UIViewController) {
         super.init()
@@ -40,19 +49,13 @@ open class FOPopup: NSObject {
         retainer = self
 
         background.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        background.backgroundColor = UIColor.black
+        background.backgroundColor = .black
         
-        if var content = content as? FOPopupProtocol {
-            content.popup = self
-            
-            if let content = content as? UIViewController {
-                content.transitioningDelegate = self
-                content.modalPresentationStyle = .custom
-                self.content = content
-            }
-        }
+        content.transitioningDelegate = self
+        content.modalPresentationStyle = .custom
+        self.content = content
 
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: .main) {
+        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main) {
             [weak self] _ in
             if let this = self {
                 let contentS = content.preferredContentSize
@@ -69,7 +72,7 @@ open class FOPopup: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func dismiss() {
+    @objc func dismiss() {
         content.dismiss(animated: true, completion: nil)
     }
     
@@ -82,7 +85,7 @@ open class FOPopup: NSObject {
 // Gesture
 extension FOPopup {
     
-    func pan(_ recognizer: UIPanGestureRecognizer) {
+    @objc func pan(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: recognizer.view)
         let velocity = recognizer.velocity(in: recognizer.view)
         let maxY = presenting().view.frame.height + content.view.frame.height / 2
@@ -118,23 +121,18 @@ extension FOPopup {
         
         recognizer.setTranslation(CGPoint.zero, in: recognizer.view)
         
-        if let content = content as? FOPopupProtocol {
-            content.didPan(recognizer)
-        }
+        delegate?.didPan(recognizer)
     }
     
     func snapToPoint(_ point: CGPoint) {
-        if let
-            content = content as? FOPopupProtocol,
-            let p = content.willSnapToPoint(point)
-        {
-            if abs(presenting().view.frame.height - p.y) < snapThreshold {
-                dismiss()
-            } else {
-                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-                    self.content.view.frame = CGRect(x: self.content.view.frame.origin.x, y: p.y, width: self.content.view.frame.width, height: self.content.view.frame.height)
-                    }, completion: nil)
-            }
+        let p = delegate?.willSnapToPoint(point) ?? point
+        
+        if abs(presenting().view.frame.height - p.y) < snapThreshold {
+            dismiss()
+        } else {
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                self.content.view.frame = CGRect(x: self.content.view.frame.origin.x, y: p.y, width: self.content.view.frame.width, height: self.content.view.frame.height)
+            }, completion: nil)
         }
     }
     
@@ -146,15 +144,13 @@ extension FOPopup {
         
         let currentY = presenting().view.frame.height - content.view.frame.origin.y
         
-        if let anchors = (content as? FOPopupProtocol)?.anchorPoints {
-            anchors.forEach { anchor in
-                if currentY - anchor.y >= 0 && currentY - anchor.y < abs(currentY - up.y) {
-                    up = anchor
-                }
-                
-                if currentY - anchor.y <= 0 && currentY - anchor.y > currentY - down.y {
-                    down = anchor
-                }
+        delegate?.anchorPoints?.forEach { anchor in
+            if currentY - anchor.y >= 0 && currentY - anchor.y < abs(currentY - up.y) {
+                up = anchor
+            }
+            
+            if currentY - anchor.y <= 0 && currentY - anchor.y > currentY - down.y {
+                down = anchor
             }
         }
         

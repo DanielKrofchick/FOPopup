@@ -9,7 +9,7 @@
 class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     var presenting = false
-    var popup: FOPopup!
+    weak var popup: FOPopup!
     
     convenience init(presenting: Bool, popup: FOPopup) {
         self.init()
@@ -54,7 +54,7 @@ class FOPopupAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 [weak self] in
                 self?.popup.background.alpha = 0.5
                 
-                if let anchor = (to as? FOPopupProtocol)?.startAnchorPoint {
+                if let anchor = self?.popup.delegate?.startAnchorPoint {
                     to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height - anchor.y, width: toS.width, height: toS.height)
                 } else {
                     to.view.frame = CGRect(x: (from.view.frame.width - toS.width) / 2.0, y: from.view.frame.height - toS.height, width: toS.width, height: toS.height)
