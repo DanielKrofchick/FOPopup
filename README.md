@@ -3,16 +3,16 @@
 FOPopup is a simple sliding panel control. It currently only works from the bottom.
 
 Initialize an `FOPopup` with a `UIViewController` that conforms to the  `FOPopupProtocol`.
-```
+```swift
 let content = UIViewController() 
 let popup = FOPopup(content: content)
 ```
 Then present the controller.
-```
+```swift
 viewController.present(content, animated: true, completion: nil)
 ```
 In the view controller, assign values for:
-```
+```swift
 anchorPoints
 startAnchorPoint
 ```
